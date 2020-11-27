@@ -20,6 +20,7 @@
     public function recuperaCpf()
     {
       return $this->cpf;
+
     }
 
   }
