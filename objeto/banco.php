@@ -14,7 +14,7 @@
   $joaoPaulo = new Titular(new Cpf('123.456.789-10'), 'João Paulo',$endereco);
   $conta = new Conta($joaoPaulo);
   var_dump($conta);
-  echo $conta->recuperaCPFTitular() .PHP_EOL;
+  echo $conta->Titular->Cpf->recuperaCPFTitular() .PHP_EOL;
   echo $conta->recuperaNomeTitular() .PHP_EOL;
   echo $conta->getSaldo() .PHP_EOL;
 
