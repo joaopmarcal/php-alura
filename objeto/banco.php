@@ -1,11 +1,11 @@
 <?php
 
-  require_once "src/Conta.php";
-  require_once "src/Pessoa.php";
-  require_once "src/Endereco.php";
-  require_once "src/Funcionario.php";
-  require_once "src/Titular.php";
-  require_once "src/Cpf.php";
+require_once 'autoload.php';
+
+  use Alura\Banco\Modelo\Conta\Titular;
+  use Alura\Banco\Modelo\Endereco;
+  use Alura\Banco\Modelo\Cpf;
+  use Alura\Banco\Modelo\Conta\Conta;
 
   $funcionario = new Funcionario('Tesla', new CPF('123.456.789-13'), 'Desenvolvedor');
   var_dump($funcionario);

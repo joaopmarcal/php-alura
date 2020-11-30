@@ -1,5 +1,8 @@
 <?php
 
+  namespace Alura\Banco\Modelo\Conta;
+
+
   class Conta {
 
     private $titular;
@@ -28,10 +31,12 @@
     }
 
     public function sacar(float $valorASacar){
-      if ($valorASacar > $this->saldo){
+      $tarifaSaque = $valorASacar * 0.05;
+      $valorSaque = $valorASacar + $tarifaSaque;
+      if ($valorSaque > $this->saldo){
         echo "Saldo Indisponível" . PHP_EOL;
       } else {
-        $this->saldo -= $valorASacar;
+        $this->saldo -= $valorSaque;
       }
     }
 
