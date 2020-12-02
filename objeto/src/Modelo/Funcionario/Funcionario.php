@@ -35,4 +35,8 @@
 
     abstract public function calculaBonificacao(): float;
 
+    public function podeAutenticar(string $senha):bool {
+      return $senha === '4321';
+    }
+
   }
