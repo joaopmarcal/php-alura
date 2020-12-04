@@ -11,4 +11,19 @@
       }
     }
 
+    public static function encontrarPessoasComSaldoMaior(int $saldo,array $array):array {
+
+      $correntistaComSalsoMaior = array();
+      foreach ($array as $chave => $valor) {
+        if ($valor > $saldo){
+          $correntistaComSalsoMaior[] = $chave;
+        }
+      }
+      if (!array_key_exists($correntistaComSalsoMaior)){
+        return array('nenhum valor retornado do banco');
+      }
+      return $correntistaComSalsoMaior;
+
+    }
+
   }
