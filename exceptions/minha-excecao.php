@@ -1,0 +1,17 @@
+<?php
+
+ini_set('display_errors', 1);
+
+
+class MinhaExcecao extends DomainException {
+
+    public function exibeVinicius(){
+        echo "Vinicius";
+    }
+
+}
+try {
+    throw new MinhaExcecao();
+} catch (MinhaExcecao $e){
+    $e->exibeVinicius();
+}

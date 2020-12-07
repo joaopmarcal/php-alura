@@ -11,7 +11,10 @@
     public function transferir(float $valorATransferir, Conta $contaDestino):void
     {
       if ($valorATransferir > $this->saldo){
+        // caso excepcional
+        // lançar uma exceção
         echo "Saldo indisponível";
+        return;
       } else {
         $this->sacar($valorATransferir);
         $contaDestino->depositar($valorATransferir);

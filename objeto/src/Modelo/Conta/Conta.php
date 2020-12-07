@@ -5,9 +5,9 @@
 
   abstract class Conta {
 
-    private $titular;
-    protected $saldo;
-    private static $numeroDeContas = 0;
+    private Titular $titular;
+    protected float $saldo;
+    private static int $numeroDeContas = 0;
 
     public function __construct(Titular $titular)
     {
@@ -34,18 +34,18 @@
       $tarifaSaque = $valorASacar * $this->percentualTarifa();
       $valorSaque = $valorASacar + $tarifaSaque;
       if ($valorSaque > $this->saldo){
-        echo "Saldo Indisponível" . PHP_EOL;
-      } else {
-        $this->saldo -= $valorSaque;
+        throw new SaldoInsuficienteException($valorSaque, $this->saldo);
       }
+
+      $this->saldo -= $valorSaque;
     }
 
     public function depositar(float $valorADepositar):void{
       if ($valorADepositar < 0){
-        echo "Valor precisa ser positivo";
-      } else {
-        $this->saldo += $valorADepositar;
+        throw new \InvalidArgumentException();
       }
+
+      $this->saldo += $valorADepositar;
     }
 
     public function recuperaNomeTitular(): string {
