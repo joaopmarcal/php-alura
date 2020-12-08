@@ -8,7 +8,7 @@ require_once 'autoload.php';
 $contaCorrente = new ContaCorrente(
     new Titular(
         new Cpf('123.456.789-10'),
-        'João Paulo',
+        'Joao',
         new Endereco('cidade','bairro','rua','numero')
     )
 );
