@@ -1,0 +1,16 @@
+{
+    "name": "joaopmarcal/buscador-cursos",
+    "description": "Projetos que busca os cursos no site da Alura",
+    "type": "library",
+    "authors": [
+        {
+            "name": "João Paulo",
+            "email": "joaopaulozangrande@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^6.3",
+        "symfony/dom-crawler": "^4.3",
+        "symfony/css-selector": "^5.2"
+    }
+}
